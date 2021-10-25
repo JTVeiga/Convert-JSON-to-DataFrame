@@ -1,22 +1,24 @@
-<h1 align="center">Utils codes in Python to image processing 2D, 3D, data science, etc</h1>
+<h1 align="center">How to convert JSON to Data-frame in python</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-Primeira versão-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/antoninocalisto/Utils_python#readme" target="_blank">
+  <img alt="Version" src="https://img.shields.io/badge/version-Primeira versÃ£o-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/JTVeiga/Convert-JSON-to-DataFrame/blob/master/README.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="Livre" target="_blank">
     <img alt="License: Livre" src="https://img.shields.io/badge/License-Livre-yellow.svg" />
   </a>
-  <a href="https://twitter.com/calistoantonino" target="_blank">
-    <img alt="Twitter: calistoantonino" src="https://img.shields.io/twitter/follow/calistoantonino.svg?style=social" />
+  <a href="https://www.linkedin.com/in/jackson-tavares-veiga-37b3a36a/" target="_blank">
   </a>
 </p>
 
-> This project (WHICH IS STILL IN DEVELOPMENT) was created with the intention of contribute to the research of the Phd student Antonino Calisto. The intention of the code is create one repository that covers the subjects of image processing 2D, 3D, data analysis, deep learnings, data processing, that is, the most diverse issues of my day-to-day related to python or my Phd. 
+> This project (Still in Development) was created with the aim of contributing to laboratory research for the standardization of raw data obtained from the database (DB). The intent of the code is to create a repository that provides the result obtained by loading a JSON file and processing the code for reading in Table format (Rows x Columns) representing the saved elements. This experiment resulted in pre-processing in phyton, using library (json) and (pandas).
 
-### 🏠 [Homepage](https://antoninocalisto.github.io/Utils_python)
 
-### ✨ [Demo](https://github.com/antoninocalisto/Utils_python)
+### [Reference] (https://www.kindsonthegenius.com/data-science/working-with-data-json-pandas-dataframe-with-python-useful-tipcs/)
+
+### ðŸ  [Homepage](https://github.com/JTVeiga/Convert-JSON-to-DataFrame)
+
+### âœ¨ [Demo](https://github.com/JTVeiga/Convert-JSON-to-DataFrame/blob/master/JSONtoDataFrame.ipynb)
 
 ## Install
 
@@ -25,58 +27,83 @@
 At the terminal, first you must clone the project (here we use the HTTP protocol, but if you prefer you can copy the project's SSH protocol link): 
 
 ```sh
-git clone https://github.com/antoninocalisto/Utils_python.git
+git clone https://github.com/JTVeiga/Convert-JSON-to-DataFrame.git
 ```
 
-2. Each project has its specific library, so you must enter the project and install the individual libraries of each code you need to use, for example, value enter the code folder for creating synthetic borders in slices of volumes (3D) of exams in .DCM format:
+2. Note that the first step will be to load the file 'D:\Python Scripts/JSON_Example.json' which is available in the project tree. Note that this must be saved in an easily accessible location on the machine and change the address 'D:\PythonScripts'.:
 
 ```sh
-cd Utils_python/sintetic_bord_3D/
+cd 'D:\Python Scripts/JSON_Example.json'
 ```
 
-3. Inside the folder, you must install the SimpleITK and Numpy libraries needed to run the code from the 'code_create_border_sintetic.py' file:
+3. 
+In this example, the Jupyter-Notebook application was used. In my case, I use the condas package manager, but you can use an online machine for testing, as long as it has the packages "json" and "pandas".
 ```sh
-pip install SimpleITK
-pip install numpy
+pip install JSON
+pip install pandas
 ```
 
-4. Make your changes and then go up to your repository:
+4. 
+In pandas, the DataFrame function is used to build the two-dimensional table, having columns following this example of indexes:
 ```sh
-git add .
-git commit -m "Downloading dependencies for possible future changes and configuring for my information"
-git push
+df = pd.DataFrame(columns=["UserID", "ID", "Title", "Competed"])
 ```
 
-## Run tests
+5. 
+The next step of the code was to create extract data from (date) that represents the elements in Json's rows and, for each attribute, organize them in the corresponding columns of the DataFrame:
 ```sh
-python code_create_border_sintetic.py
-```
 
-## Summary
-Summary of descriptions of existing repositories in this project for better search location:
+for i in range (0, len(date)):
+    currentItem = (date[i])
+    df.loc[i] = [data[i]["userId"], data[i]["id"], data[i]["title"], data[i]["completed"]]
+	
+6. 
+This was a simple example of extracting data from a JSON to a table, having the indexes organized according to the information extracted from each "row" element. However, it is noticed that in a complete JSON the information is chained, in this sense the search function can be improved.
+I pose a challenge for those who enable creating a table of the following JSON:
 
-1. **sintetic_bord_3D** 
-> Code to create sintetic border in slicers of files of format .DCM<i></p>
+{
+    "glossary": {
+        "title": "example glossary",
+		"GlossDiv": {
+            "title": "S",
+			"GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+					"SortAs": "SGML",
+					"GlossTerm": "Standard Generalized Markup Language",
+					"Acronym": "SGML",
+					"Abbrev": "ISO 8879:1986",
+					"GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+						"GlossSeeAlso": ["GML", "XML"]
+                    },
+					"GlossSee": "markup"
+                }
+            }
+        }
+    }
+}
 
-2. **[In progress ...]**
-> 
+
+I hope you enjoyed!
+
 
 ## Author
 
-👤 **Antonino Calisto**
+ðŸ‘¤ **Jackson T. Veiga**
 
-* Website: https://antoninocalisto.github.io/curriculo/
-* Twitter: [@calistoantonino](https://twitter.com/calistoantonino)
-* Github: [@antoninocalisto](https://github.com/antoninocalisto)
-* LinkedIn: [@Antonino Calisto](https://linkedin.com/in/antonino-calisto-08991270/)
+* CVLattes: http://lattes.cnpq.br/893985001407088
+* ORCID: ORCID: 0000-0003-3228-7352
+* Github: [@JTVeiga](https://github.com/JTVeiga/)
+* LinkedIn: [@Jackson Tavares Veiga](https://www.linkedin.com/in/jackson-tavares-veiga-37b3a36a/)
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
+Give a â­ï¸ if this project helped you!
 
-## 📝 License
+## ðŸ“ License
 
-Copyright © 2021 [Antonino Calisto](https://github.com/antoninocalisto).<br />
+Copyright Â© 2021 [Antonino Calisto](https://github.com/antoninocalisto).<br />
 This project is [Livre](Livre) licensed.
 
 ***
