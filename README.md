@@ -103,7 +103,7 @@ Give a â­ï¸ if this project helped you!
 
 ## ðŸ“ License
 
-Copyright Â© 2021 [Antonino Calisto](https://github.com/antoninocalisto).<br />
+Copyright Â© 2021 [Jackson T. Veiga](https://github.com/JTVeiga).<br />
 This project is [Livre](Livre) licensed.
 
 ***
