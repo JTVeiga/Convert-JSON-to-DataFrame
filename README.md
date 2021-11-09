@@ -105,9 +105,9 @@ Jackson T. Veiga
 
 ## Show your support
 
-Give a â­ï¸ if this project helped you!
+Give a like if this project helped you!
 
-## ðŸ“ License
+##  License
 
 Copyright Â© 2021 [Jackson T. Veiga](https://github.com/JTVeiga).<br />
 This project is [Livre](Livre) licensed.
