@@ -51,16 +51,19 @@ df = pd.DataFrame(columns=["UserID", "ID", "Title", "Competed"])
 
 5. 
 The next step of the code was to create extract data from (date) that represents the elements in Json's rows and, for each attribute, organize them in the corresponding columns of the DataFrame:
+
 ```sh
 
 for i in range (0, len(date)):
     currentItem = (date[i])
     df.loc[i] = [data[i]["userId"], data[i]["id"], data[i]["title"], data[i]["completed"]]
-	
+```
+
 6. 
 This was a simple example of extracting data from a JSON to a table, having the indexes organized according to the information extracted from each "row" element. However, it is noticed that in a complete JSON the information is chained, in this sense the search function can be improved.
 I pose a challenge for those who enable creating a table of the following JSON:
 
+```sh
 {
     "glossary": {
         "title": "example glossary",
@@ -84,13 +87,14 @@ I pose a challenge for those who enable creating a table of the following JSON:
     }
 }
 
+```
 
 I hope you enjoyed!
 
 
 ## Author
 
-ðŸ‘¤ **Jackson T. Veiga**
+ **Jackson T. Veiga**
 
 Jackson T. Veiga
 
